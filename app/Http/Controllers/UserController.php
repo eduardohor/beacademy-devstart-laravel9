@@ -15,7 +15,7 @@ class UserController extends Controller
             ]
         ];
 
-        dd($users);
+        return $users;
     }
 
     public function show($id)
