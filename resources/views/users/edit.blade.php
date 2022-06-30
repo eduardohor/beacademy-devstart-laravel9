@@ -3,8 +3,19 @@
 @section('body')
     
 <h1>Usuário {{$user->name}}</h1>
+
+    @if($errors->any())
+
+      <div class="alert alert-danger" role="alert">
+        @foreach($errors->all() as $error)
+          {{$error}} <br>
+        @endforeach
+      </div>
+      
+    @endif
+    
 <form action="{{route('users.update', $user->id)}}" method="POST">
-    @method('put')
+    @method('PUT')
     @csrf
     <div class="mb-3">
       <label for="name" class="form-label">Nome</label>
