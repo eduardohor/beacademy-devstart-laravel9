@@ -28,6 +28,10 @@
       <label for="password" class="form-label">Senha</label>
       <input type="password" class="form-control" id="password" name="password">
     </div>
+    <div class="mt-2 mb-3">
+      <label for="image" class="form-label">Selecionar Imagem</label>
+      <input type="file" class="form-control form-control-md" id="image" name="image">
+    </div>
     
     <button type="submit" class="btn btn-primary">Enviar</button>
   </form>

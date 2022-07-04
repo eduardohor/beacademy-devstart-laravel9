@@ -13,7 +13,18 @@
 </head>
 <body>
     <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-dark mt-3" style="background:#000;">
+            <ul class="navbar-nav">
+                <li class="nav-item" >
+                    <a class="nav-link" href="{{route('users.index')}}">Usuários</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Posts</a>
+                </li>
+            </ul>
+        </nav>
         @yield('body')
+
     </div>
 </body>
 </html>
