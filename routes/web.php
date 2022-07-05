@@ -2,11 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
+    PostController,
     UserController,
     ViaCepController
 };
 
-//USUÁRIIO
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
+//USUÁRIO
 Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::put('users/{id}', [UserController::class, 'update'])->name('users.update');
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');

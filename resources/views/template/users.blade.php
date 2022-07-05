@@ -13,15 +13,17 @@
 </head>
 <body>
     <div class="container w-50 p-3">
-        <nav class="navbar navbar-expand-sm navbar-dark mt-3" style="background:#000;">
-            <ul class="navbar-nav">
-                <li class="nav-item" >
-                    <a class="nav-link" href="{{route('users.index')}}">Usuários</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Posts</a>
-                </li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" >
+                        <a class="nav-link text-white" href="/users">Usuários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/posts">Posts</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
         @yield('body')
 
