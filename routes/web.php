@@ -7,7 +7,9 @@ use App\Http\Controllers\{
     ViaCepController
 };
 
+//POSTS
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/posts/{id}/posts', [PostController::class, 'show'])->name('posts.show');
 
 //USUÁRIO
 Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
@@ -17,8 +19,6 @@ Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
 Route::post('/user', [UserController::class, 'store'])->name('user.store');
-
-
 
 //VIA CEP WEB SERVICE
 Route::get('/viacep', [ViaCepController::class, 'index'])->name('viacep.index');
