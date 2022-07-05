@@ -14,7 +14,7 @@
     
   @endif
     
-  <form action="{{route('user.store')}}" method="POST">
+  <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data">
       @csrf
       <div class="mb-3">
           <label for="name" class="form-label">Nome</label>

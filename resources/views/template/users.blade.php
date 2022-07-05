@@ -12,7 +12,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container w-50 p-3">
         <nav class="navbar navbar-expand-sm navbar-dark mt-3" style="background:#000;">
             <ul class="navbar-nav">
                 <li class="nav-item" >
