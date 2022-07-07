@@ -3,9 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     PostController,
+    TeamController,
     UserController,
     ViaCepController
 };
+
+//Team
+Route::get('/teams/users/{id}', [TeamController::class, 'showUserToTeams'])->name('teams.user.show');
+Route::get('/teams/{id}', [TeamController::class, 'showTeams'])->name('teams.show');
 
 //POSTS
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
