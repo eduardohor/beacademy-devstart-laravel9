@@ -36,6 +36,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/user', [UserController::class, 'store'])->name('user.store');
 });
 
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin', [UserController::class, 'admin'])->name('admin');
+});
 
 //VIA CEP WEB SERVICE
 Route::get('/viacep', [ViaCepController::class, 'index'])->name('viacep.index');
