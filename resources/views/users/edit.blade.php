@@ -11,7 +11,6 @@
           {{$error}} <br>
         @endforeach
       </div>
-      
     @endif
     
 <form action="{{route('users.update', $user->id)}}" method="POST">
@@ -32,6 +31,13 @@
       <label for="image" class="form-label">Selecionar Imagem</label>
       <input type="file" class="form-control form-control-md" id="image" name="image">
     </div>
+    <div class="form-check mb-5">
+      <input class="form-check-input" type="checkbox" id="admin" name="admin" value="1">
+      <label class="form-check-label" for="admin">
+        Administrador
+      </label>
+    </div>
+
     
     <button type="submit" class="btn btn-primary">Enviar</button>
   </form>

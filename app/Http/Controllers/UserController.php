@@ -56,6 +56,8 @@ class UserController extends Controller
 
         $this->model->create($data);
 
+        $request->session()->flash('create', 'Usuário cadastrado com sucesso!!');
+
         return redirect()->route('users.index');
     }
 
@@ -67,7 +69,7 @@ class UserController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update(StoreUpdateUserFormRequest $request, $id)
+    public function update(Request $request, $id)
     {
         if (!$user = $this->model->find($id))
             return redirect()->route('users.index');
@@ -76,9 +78,11 @@ class UserController extends Controller
         if ($request->password)
             $data['password'] = bcrypt($request->password);
 
+        $data['is_admin'] = $request->admin ? 1 : 0;
+
         $user->update($data);
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('edit', 'Usuário editado com sucesso!!');
     }
 
     public function destroy($id)
@@ -88,7 +92,7 @@ class UserController extends Controller
 
         $user->delete();
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('destroy', 'Usuário deletado com sucesso!!');
     }
 
     public function admin()
