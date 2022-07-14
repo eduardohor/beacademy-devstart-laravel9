@@ -1,5 +1,4 @@
 @extends('template.users')
-@section('title', $title)
 @section('body')
     
     <h1>Listagem de Usuários</h1>
