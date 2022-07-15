@@ -21,7 +21,6 @@ Route::get('/teams/{id}', [TeamController::class, 'showTeams'])->name('teams.sho
 
 
 Route::middleware(['auth'])->group(function () {
-
     //POSTS
     Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
     Route::get('/posts/{id}/posts', [PostController::class, 'show'])->name('posts.show');
