@@ -18,6 +18,8 @@ Route::get('/teams/users/{id}', [TeamController::class, 'showUserToTeams'])->nam
 Route::get('/teams/{id}', [TeamController::class, 'showTeams'])->name('teams.show');
 
 
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+Route::post('/user', [UserController::class, 'store'])->name('user.store');
 
 
 Route::middleware(['auth'])->group(function () {
@@ -30,9 +32,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('users/{id}', [UserController::class, 'update'])->name('users.update');
     Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
     Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
-    Route::post('/user', [UserController::class, 'store'])->name('user.store');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {

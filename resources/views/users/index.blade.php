@@ -12,7 +12,7 @@
     @endif
     @if(session()->has('edit'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Atenção!</strong> {{session()->get('edit')}}
+        <strong>Sucesso!</strong> {{session()->get('edit')}}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   @endif
