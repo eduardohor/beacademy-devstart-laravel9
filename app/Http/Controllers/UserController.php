@@ -7,6 +7,7 @@ use App\Http\Requests\StoreUpdateUserFormRequest;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -42,21 +43,21 @@ class UserController extends Controller
     {
         return view('users.create');
     }
-    public function store(StoreUpdateUserFormRequest $request)
+    public function store(Request $request)
+
     {
-        // $user = new User();
-        // $user->name = $request->name;
-        // $user->email = $request->email;
-        // $user->password = bcrypt($request->password);
-        // $user->save();
 
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
 
         if ($request->image) {
-            $file = $request['image'];
-            $path = $file->store('profile', 'public');
+            $path = $request->image->store('/images', 's3');
             $data['image'] = $path;
+
+
+
+
+            // Storage::disk('s3')->put($file, file_get_contents($file));
         }
 
         $this->model->create($data);

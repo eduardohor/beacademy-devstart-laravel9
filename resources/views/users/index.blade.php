@@ -56,7 +56,7 @@
           @foreach($users as $user)
           <tr>
             @if($user->image)
-                <th><img src="{{asset('storage/'.$user->image)}}" width="50px" height="50px" class="rounded-circle"></th>
+                <th><img src="{{asset('https://teste-laravel9.s3.sa-east-1.amazonaws.com/' . $user->image)}}" width="50px" height="50px" class="rounded-circle"></th>
             @else
                 <th><img src="{{asset('storage/profile/avatar.png')}}" width="50px" height="50px" class="rounded-circle"></th>
             @endif

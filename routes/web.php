@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
@@ -43,3 +44,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::get('/viacep', [ViaCepController::class, 'index'])->name('viacep.index');
 Route::post('/viacep', [ViaCepController::class, 'index'])->name('viacep.index.post');
 Route::get('/viacep/{cep}', [ViaCepController::class, 'show'])->name('viacep.show');
+
+
+Route::get('/api', [ApiController::class, 'index'])->name('api.index');
+Route::post('/api', [ApiController::class, 'show']);
